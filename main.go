@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"main.go/book"
 	"main.go/config"
+	"main.go/middleware"
 	"main.go/user"
 	"net/http"
 	"os"
@@ -20,6 +21,7 @@ func main() {
 	}
 
 	r := chi.NewRouter()
+	r.Use(middleware.RequestID)
 
 	r.Get("/info", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "Hello World")
