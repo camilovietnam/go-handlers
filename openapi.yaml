@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: Sample API
+  version: 1.0.0
+  servers:
+    - url: http://localhost:8090
+paths:
+  /info:
+    get:
+      summary: Info endpoint
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+  /book:
+    get:
+      summary: List books
+      responses:
+        '200':
+          description: To be implemented
+          content:
+            text/plain:
+              schema:
+                type: string
+  /book/{id}:
+    get:
+      summary: Get book by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: To be implemented
+          content:
+            text/plain:
+              schema:
+                type: string
+  /user:
+    get:
+      summary: List users
+      responses:
+        '200':
+          description: To be implemented
+          content:
+            text/plain:
+              schema:
+                type: string
+  /user/{id}:
+    get:
+      summary: Get user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: To be implemented
+          content:
+            text/plain:
+              schema:
+                type: string
